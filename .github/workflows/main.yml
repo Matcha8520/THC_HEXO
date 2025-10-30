@@ -21,22 +21,15 @@ jobs:
       run: |
         npm install
 
-    - name: Hexo Clean and Generate
-      run: |
-        npx hexo clean
-        npx hexo generate
-
-    - name: Deploy to GitHub Pages
-      run: |
-        git config --global user.name 'Matcha8520'
-        git config --global user.email 'mr_matcha@outlook.com'
-
-        # 使用 Personal Access Token 进行推送
-        git clone https://${{ secrets.EDITOR }}github.com/Matcha8520/github.io .deploy_git
-        cp -r public/* .deploy_git
-        cd .deploy_git
-
-        git add -A
-        git commit -m "Deployed by GitHub Actions"
-        git push origin main
+ - name: Deploy to GitHub Pages
+  run: |
+    git config --global user.name 'Matcha8520'
+    git config --global user.email 'mr_matcha@outlook.com'
+    # 使用 Personal Access Token 进行推送
+    git clone https://${{ secrets.DEPLOY_TOKEN }}@github.com/Matcha8520/github.io .deploy_git
+    cp -r public/* .deploy_git
+    cd .deploy_git
+    git add -A
+    git commit -m "Deployed by GitHub Actions" || echo "No changes to commit"
+    git push origin main
 
