@@ -32,7 +32,7 @@ jobs:
         git config --global user.email 'action@github.com'
 
         # 使用 Personal Access Token 进行推送
-        git clone https://${{ secrets.TOKEN_NAME }}@https://github.com/{{UserName}}/{{repository}}.git .deploy_git
+        git clone https://${{ secrets.EDITOR }}@https://github.com/Matcha8520/github.io .deploy_git
         cp -r public/* .deploy_git
         cd .deploy_git
 
