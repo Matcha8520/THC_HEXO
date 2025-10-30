@@ -1,0 +1,42 @@
+name: Hexo Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'
+
+    - name: Install Dependencies
+      run: |
+        npm install
+
+    - name: Hexo Clean and Generate
+      run: |
+        npx hexo clean
+        npx hexo generate
+
+    - name: Deploy to GitHub Pages
+      run: |
+        git config --global user.name 'GithubAction'
+        git config --global user.email 'action@github.com'
+
+        # 使用 Personal Access Token 进行推送
+        git clone https://${{ secrets.EDITOR }}@https://github.com/Matcha8520/github.io .deploy_git
+        cp -r public/* .deploy_git
+        cd .deploy_git
+
+        git add -A
+        git commit -m "Deployed by GitHub Actions"
+        git push origin main
+
