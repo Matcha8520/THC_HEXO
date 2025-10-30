@@ -28,8 +28,8 @@ jobs:
 
     - name: Deploy to GitHub Pages
       run: |
-        git config --global user.name 'GithubAction'
-        git config --global user.email 'action@github.com'
+        git config --global user.name 'matcha8520'
+        git config --global user.email 'mr_matcha@outlook.com'
 
         # 使用 Personal Access Token 进行推送
         git clone https://${{ secrets.EDITOR }}github.com/Matcha8520/github.io .deploy_git
