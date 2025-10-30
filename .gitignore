@@ -1,0 +1,18 @@
+# Node.js
+npm-debug.log*
+
+# Hexo
+db.json
+public/
+.cache/
+*.log
+*.pid
+*.lock
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS
+.DS_Store
+Thumbs.db
