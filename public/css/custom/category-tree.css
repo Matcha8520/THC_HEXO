@@ -1,0 +1,110 @@
+/* === 分类页面美化 - 亮暗双主题（适配原始 EJS 结构）=== */
+#cat .all-cats {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  #cat .all-cats a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    position: relative;
+    font-size: 14px;
+    min-height: 44px;
+  }
+  
+  /* === 暗色模式（默认）=== */
+  html[color-scheme="dark"] #cat .all-cats a,
+  html:not([color-scheme]) #cat .all-cats a {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    color: #ccc;
+  }
+  
+  html[color-scheme="dark"] #cat .all-cats a i.fa-folder-open {
+    color: #4da6ff;
+  }
+  
+  html[color-scheme="dark"] #cat .all-cats a span.name {
+    color: #007bff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  html[color-scheme="dark"] #cat .all-cats a span.title {
+    color: #999;
+    font-size: 0.9em;
+  }
+  
+  /* 子分类 - 暗色 */
+  html[color-scheme="dark"] #cat .all-cats a.child {
+    background-color: #252525;
+    padding-left: 36px;
+    border-left: 3px solid #007bff;
+  }
+  
+  /* === 亮色模式 === */
+  html[color-scheme="light"] #cat .all-cats a {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    color: #333;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  
+  html[color-scheme="light"] #cat .all-cats a i.fa-folder-open {
+    color: #0d6efd;
+  }
+  
+  html[color-scheme="light"] #cat .all-cats a span.name {
+    color: #0d6efd;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  html[color-scheme="light"] #cat .all-cats a span.title {
+    color: #6c757d;
+    font-size: 0.9em;
+  }
+  
+  /* 子分类 - 亮色 */
+  html[color-scheme="light"] #cat .all-cats a.child {
+    background-color: #f8f9fa;
+    padding-left: 36px;
+    border-left: 3px solid #0d6efd;
+  }
+  
+  /* 通用悬停效果 */
+  #cat .all-cats a:hover {
+    transform: translateY(-1px);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  html[color-scheme="dark"] #cat .all-cats a:hover,
+  html:not([color-scheme]) #cat .all-cats a:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border-color: #007bff;
+  }
+  
+  html[color-scheme="light"] #cat .all-cats a:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-color: #0d6efd;
+  }
+  
+  /* 响应式 */
+  @media (max-width: 768px) {
+    #cat .all-cats a {
+      padding: 10px 12px;
+      font-size: 13px;
+    }
+    #cat .all-cats a.child {
+      padding-left: 28px;
+    }
+  }

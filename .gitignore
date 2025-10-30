@@ -3,7 +3,6 @@ npm-debug.log*
 
 # Hexo
 db.json
-public/
 .cache/
 *.log
 *.pid

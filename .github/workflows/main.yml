@@ -20,7 +20,6 @@ jobs:
     - name: Install Dependencies
       run: |
         npm install
-
     - name: Deploy to GitHub Pages
       run: |
         git config --global user.name 'Matcha8520'
@@ -30,9 +29,6 @@ jobs:
         git clone https://${{ secrets.DEPLOY_TOKEN }}@github.com/Matcha8520/Matcha8520.github.io .deploy_git
         cp -r public/* .deploy_git
         cd .deploy_git
-
         git add -A
         git commit -m "Deployed by GitHub Actions" || echo "No changes to commit"
         git push origin main
-
-        
