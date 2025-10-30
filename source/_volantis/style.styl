@@ -1,0 +1,398 @@
+// 添加透明度
+#l_main .post,
+#l_side .widget
+  opacity: 0.8
+
+// 文章不透明,否则会影响阅读
+#post.post,
+#docs.post
+  opacity: 1
+
+//背景亮度
+.parallax-mirror
+  filter: brightness(0.5)
+
+*/
+.top .title span{
+    transition: 0.5s;
+}
+.top .title:hover span:nth-child(1){
+    margin-right: 10px;
+}
+.top .title:hover span:nth-child(2){
+    margin-left: 10px;
+}
+.top .title:hover span{
+    color: #fff;
+    text-shadow: 0 0 20px rgba(33,150,243,0.2);
+}
+// 侧边栏-作者栏下的图标布局居中
+.widget.blogger .content .social-wrapper {
+    justify-content: center;
+    -webkit-justify-content: center;
+}
+/* 调整每个菜单链接的左右内边距 */
+.nav-main .menu .nav-list-h > li > a.menuitem {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+//cover-bg图片渐隐
+.cover-bg {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* 在底部叠加一个从透明到背景色的渐变遮罩 */
+.cover-bg {
+  -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%) !important;
+  mask-image: linear-gradient(to bottom, black 90%, transparent 100%) !important;
+}
+
+/* === 分类页面美化 - 亮暗双主题（适配原始 EJS 结构）=== */
+#cat .all-cats {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  #cat .all-cats a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    position: relative;
+    font-size: 14px;
+    min-height: 44px;
+  }
+  
+  /* === 暗色模式（默认）=== */
+  html[color-scheme="dark"] #cat .all-cats a,
+  html:not([color-scheme]) #cat .all-cats a {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    color: #ccc;
+  }
+  
+  html[color-scheme="dark"] #cat .all-cats a i.fa-folder-open {
+    color: #4da6ff;
+  }
+  
+  html[color-scheme="dark"] #cat .all-cats a span.name {
+    color: #007bff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  html[color-scheme="dark"] #cat .all-cats a span.title {
+    color: #999;
+    font-size: 0.9em;
+  }
+  
+  /* 子分类 - 暗色 */
+  html[color-scheme="dark"] #cat .all-cats a.child {
+    background-color: #252525;
+    padding-left: 36px;
+    border-left: 3px solid #007bff;
+  }
+  
+  /* === 亮色模式 === */
+  html[color-scheme="light"] #cat .all-cats a {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    color: #333;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  
+  html[color-scheme="light"] #cat .all-cats a i.fa-folder-open {
+    color: #0d6efd;
+  }
+  
+  html[color-scheme="light"] #cat .all-cats a span.name {
+    color: #0d6efd;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  html[color-scheme="light"] #cat .all-cats a span.title {
+    color: #6c757d;
+    font-size: 0.9em;
+  }
+  
+  /* 子分类 - 亮色 */
+  html[color-scheme="light"] #cat .all-cats a.child {
+    background-color: #f8f9fa;
+    padding-left: 36px;
+    border-left: 3px solid #0d6efd;
+  }
+  
+  /* 通用悬停效果 */
+  #cat .all-cats a:hover {
+    transform: translateY(-1px);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  html[color-scheme="dark"] #cat .all-cats a:hover,
+  html:not([color-scheme]) #cat .all-cats a:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border-color: #007bff;
+  }
+  
+  html[color-scheme="light"] #cat .all-cats a:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-color: #0d6efd;
+  }
+  
+  /* 响应式 */
+  @media (max-width: 768px) {
+    #cat .all-cats a {
+      padding: 10px 12px;
+      font-size: 13px;
+    }
+    #cat .all-cats a.child {
+      padding-left: 28px;
+    }
+  }
+
+  /* 网页头图 */
+.headimg-div
+  display: block
+  margin-left: 0 - 1.5 * $gap
+  margin-top: 0 - 1.5 * $gap
+  margin-bottom: 1.25 * $gap
+  width: "calc(100% + 3 * %s)" % $gap
+  .headimg-a
+    display: block
+    overflow: hidden
+    height: 280px
+    @media screen and (max-width: $device-tablet)
+      height: 250px
+    @media screen and (max-width: $device-mobile)
+      height: 220px
+    @media screen and (max-width: $device-mobile-l)
+      height: 190px
+  .headimg
+    object-fit: cover
+    width: 100%
+    height: 100%
+    transition transform 3s ease-out
+    &:hover
+      transform: scale(1.1)
+    &.lazyload:not(.placeholder)
+      transition transform 3s ease-out, opacity .5s ease-out
+      &:not(.loaded)
+        opacity: 0
+      &.loaded
+        opacity: 1
+
+.article a:not([class]):not([data-fancybox]),
+.content > a
+  position: relative
+  text-decoration: none
+  &:before
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px
+    height: 1px
+    width: 100%
+    background: #ff5722
+    transform: scale(0)
+    transition: all 0.5s
+  &:hover:before
+    transform: scale(1)
+// 列表页的内容居中
+.post.post-v3.white-box
+  text-align: center
+  & a
+    font-weight: 600 !important
+
+// 内容居左且首行缩进
+.post.post-v3.white-box  p
+  text-align: left
+  text-indent: 2em
+.l_header
+  @media screen and (max-width: $device-2k)
+    left: 0 !important
+    border-radius: 0 !important
+    max-width: 100% !important
+
+/* 自定义Note图标 */
+div.note
+  &.yin-yang::before
+    content: '\f6ad'
+  &.quote::before
+    content: '\f10d'
+
+/* Waline 评论区右下角底图 */
+.wl-panel {
+  position: relative; /* 确保子元素可以绝对定位 */
+}
+
+.wl-panel::after {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 120px;
+  height: 120px;
+  background-image: url("https://pic.shika-mori.top/picGO/sample_66d044e6b5a822de1a79021f25b84780.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.50;
+  pointer-events: none; /* 关键：允许点击穿透，不影响评论操作 */
+  z-index: 1;
+}
+
+/* 自定义可选中内容 */
+.not-select,
+figcaption,
+footer,
+section,
+details summary,
+.new-meta-box,
+.nav-tabs
+  -webkit-touch-callout none
+  -webkit-user-select none
+  -khtml-user-select none
+  -moz-user-select none
+  -ms-user-select none
+  user-select none
+  & p,
+  & span
+    cursor: $default,default
+  &.default-cursor
+    cursor: $default,default !important
+.allow-select
+  -webkit-touch-callout all
+  -webkit-user-select all
+  -khtml-user-select all
+  -moz-user-select all
+  -ms-user-select all
+  user-select all
+
+/* 杂项修改 */
+/* 基础（亮色默认） */
+/* 基础（亮色默认） */
+.page-title {
+  text-align: center;
+  margin: 1.5rem 0;
+  font-size: 1.8rem;
+  color: #333;
+}
+.magazine-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+  margin-top: 1rem;
+  padding: 0 0.5rem;
+}
+.magazine-item {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: #fff;
+}
+.magazine-item:hover { transform: translateY(-4px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+.magazine-link { display: block; color: inherit; text-decoration: none; }
+.magazine-cover {
+  width: 100%;
+  padding-top: calc(2245 / 3308 * 100%);
+  position: relative;
+  background-color: #f5f5f5;
+  overflow: hidden;
+  display: block;
+}
+.magazine-cover img {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.magazine-cover.placeholder { display: flex; align-items: center; justify-content: center; color: #aaa; font-size: 0.8rem; }
+.magazine-cover.placeholder::after { content: "无封面图"; color: inherit; }
+.magazine-info { padding: 0.8rem; text-align: center; }
+.magazine-title { font-size: 1rem; margin: 0; line-height: 1.4; color: #222; font-weight: 500; }
+
+/* —— 优先覆盖：针对 html[color-scheme="dark"] —— */
+html[color-scheme="dark"] .page-title,
+html[color-scheme="dark"] body .page-title {
+  color: #ddd;
+}
+html[color-scheme="dark"] .magazine-item,
+html[color-scheme="dark"] body .magazine-item,
+html[color-scheme="dark"] .magazine-grid > .magazine-item {
+  background: #2e2e2e;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.45);
+}
+html[color-scheme="dark"] .magazine-item:hover,
+html[color-scheme="dark"] body .magazine-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.55);
+}
+html[color-scheme="dark"] .magazine-cover,
+html[color-scheme="dark"] body .magazine-cover {
+  background-color: #1f1f1f;
+}
+html[color-scheme="dark"] .magazine-cover.placeholder,
+html[color-scheme="dark"] body .magazine-cover.placeholder {
+  color: #777;
+}
+html[color-scheme="dark"] .magazine-cover.placeholder::after,
+html[color-scheme="dark"] body .magazine-cover.placeholder::after {
+  content: "无封面图";
+  color: #666;
+}
+html[color-scheme="dark"] .magazine-title,
+html[color-scheme="dark"] body .magazine-title {
+  color: #eee;
+}
+
+/* —— 兼容：常见主题类或 data-attr —— */
+html.DarkMode .magazine-item,
+:root[data-theme="dark"] .magazine-item,
+[class*="dark"] .magazine-item {
+  background: #2e2e2e;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.45);
+}
+html.DarkMode .magazine-title,
+:root[data-theme="dark"] .magazine-title,
+[class*="dark"] .magazine-title {
+  color: #eee;
+}
+
+/* —— 系统偏好（仅在没有显式 color-scheme 时作为回退） —— */
+@media (prefers-color-scheme: dark) {
+  :root:not([color-scheme]) .page-title { color: #ddd; }
+  :root:not([color-scheme]) .magazine-item { background: #2e2e2e; box-shadow: 0 4px 8px rgba(0,0,0,0.45); }
+  :root:not([color-scheme]) .magazine-item:hover { box-shadow: 0 6px 12px rgba(0,0,0,0.55); }
+  :root:not([color-scheme]) .magazine-cover { background-color: #1f1f1f; }
+  :root:not([color-scheme]) .magazine-cover.placeholder { color: #777; }
+  :root:not([color-scheme]) .magazine-cover.placeholder::after { color: #666; content: "无封面图"; }
+  :root:not([color-scheme]) .magazine-title { color: #eee; }
+}
+
+/* 如果主题样式使用非常具体或 inline 规则导致覆盖，临时调试建议：添加 !important（仅在必要时） */
+/* 下面仅在极端情况下启用（解除注释后使用） */
+/*
+html[color-scheme="dark"] .magazine-item { background: #2e2e2e !important; box-shadow: 0 4px 8px rgba(0,0,0,0.45) !important; }
+html[color-scheme="dark"] .magazine-title { color: #eee !important; }
+*/
+/* 往期杂志入口卡片样式强化 */
+// 仅修改“往期一览”模块的封面图样式
+.magazine-entry
+  .cover
+    img
+      // 示例：圆角更大
+      border-radius: 12px !important
+      // 示例：高度固定（可选）
+      height: 200px !important
+      object-fit: cover !important
+      // 示例：移除阴影或边框（根据需要）
+      box-shadow: none !important
