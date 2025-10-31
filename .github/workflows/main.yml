@@ -19,7 +19,7 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        npm install hexo@7.2.0 hexo-cli@7.2.0 --save
+        npm install hexo@7.2.0 hexo-cli --save
         npm install
 
     - name: Hexo Clean and Generate
