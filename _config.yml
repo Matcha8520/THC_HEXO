@@ -10,15 +10,15 @@ keywords: Touhou 東方project
 author: 東聯印社
 language: zh-CN
 timezone: ''
-favicon: https://pic.shika-mori.top/picGO/阿求.png
+favicon: https://cdn.shika-mori.top/picGO/阿求.png
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://touhouchronicle.com
 permalink: :title/
 permalink_defaults:
 pretty_urls:
-  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
-  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+  trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: false # Set to false to remove trailing '.html' from permalinks
 
 # Directory
 source_dir: source
@@ -103,5 +103,5 @@ theme: volantis
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/Matcha8520/octocat.github.io.git
+  repo: https://github.com/Matcha8520/Matcha8520.github.io.git
   branch: main
