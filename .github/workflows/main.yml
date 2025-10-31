@@ -19,7 +19,18 @@ jobs:
 
     - name: Install Dependencies
       run: |
+        npm install hexo@7.2.0 hexo-cli@7.2.0 --save
         npm install
+
+    - name: Hexo Clean and Generate
+      run: |
+        npx hexo clean
+        npx hexo generate
+
+    - name: Add CNAME
+      run: |
+        echo "www.touhouchronicle.com" > ./public/CNAME
+
     - name: Deploy to GitHub Pages
       run: |
         git config --global user.name 'Matcha8520'

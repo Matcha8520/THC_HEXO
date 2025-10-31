@@ -4,7 +4,7 @@ info:
   theme_docs: https://volantis.js.org/ # This is theme's URL.
   theme_repo: https://github.com/volantis-x/hexo-theme-volantis
 # Debug 调试模式
-debug: env # false: 关闭调试模式， env：环境配置检查， pjax：调试pjax，rightMenus: 调试右键
+debug: false # false: 关闭调试模式， env：环境配置检查， pjax：调试pjax，rightMenus: 调试右键
 ############################### 默认占位图 ###############################
 default:
   avatar: https://pic.shika-mori.top/picGO/阿求.png # https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/avatar/round/3442075.svg
@@ -69,6 +69,7 @@ content_visibility: false
 replace:
   - https://cdn.jsdelivr.net/npm/ => https://unpkg.com/
   - https://cdn.jsdelivr.net/gh/ => https://gcore.jsdelivr.net/gh/
+  - https://pic.shika-mori.top/ => https://cdn.shika-mori.top/
 
 
 # dns-prefetch preconnect x-dns-prefetch-control
@@ -92,7 +93,7 @@ navbar:
       url: /
     - name: 往期一览
       icon: fa-solid fa-folder-open
-      url: covers/
+      url: /covers
     - name: 友链
       icon: fa-solid fa-link
       url: friends/
@@ -131,11 +132,11 @@ cover:
     - name: 往期一览
       icon: #
       img: volantis-static/media/twemoji/assets/svg/1f516.svg #  https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f516.svg
-      url: /covers/
+      url: covers/
     - name: 关于我们
       icon: #
       img: volantis-static/media/twemoji/assets/svg/1f396.svg #  https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f396.svg
-      url: /about/
+      url: about/
     - name: 留言板
       icon: #
       img: volantis-static/media/twemoji/assets/svg/1f389.svg #  https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f389.svg
@@ -147,7 +148,7 @@ cover:
     - name: 友链
       icon: #
       img: volantis-static/media/twemoji/assets/svg/1f9ec.svg #  https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg
-      url: /friends/
+      url: /friends
 ############################### Cover ############################### > end
 
 pages:
