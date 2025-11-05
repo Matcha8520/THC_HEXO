@@ -69,7 +69,7 @@ content_visibility: false
 replace:
   - https://cdn.jsdelivr.net/npm/ => https://unpkg.com/
   - https://cdn.jsdelivr.net/gh/ => https://gcore.jsdelivr.net/gh/
-  - https://pic.shika-mori.top/ => https://cdn.shika-mori.top/
+  - https://pic.shika-mori.top/ => https://img.shika-mori.top/
 
 
 # dns-prefetch preconnect x-dns-prefetch-control
