@@ -5,5 +5,5 @@ group: magazine
 abbrlink: 18297
 date: 2025-11-05 23:32:09
 tags:
-headimg: https://pic.shika-mori.top/picGO/v9.png
+headimg: https://pic.shika-mori.top/picGO/v9.jpg
 ---
